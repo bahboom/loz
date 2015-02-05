@@ -11,3 +11,6 @@ run: all
 debug: all
 	gdb debug/loz.exe
 
+commit:
+	git commit -a -m "check in"
+	git push
