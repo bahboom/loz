@@ -1,0 +1,7 @@
+src/     - Holds c++ source code.
+inc/     - Holds header file.
+data/    - Holds game assets.
+release/ - Final program release.
+debug/   - Debuggable executable.
+makefile - Makefile config.OA
+README   - This file.
