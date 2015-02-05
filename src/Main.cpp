@@ -22,12 +22,10 @@ void Z::InitOpenGL( SDL_Window *window ) {
     //SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 1 );
 
     SDL_GL_CreateContext( window );
-    //glClearColor( 0.0, 0.0, 0.0, 1.0 );
-    //glEnable( GL_LINE_SMOOTH );
-    //glHint( GL_LINE_SMOOTH, GL_NICEST );
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
 
+    // TODO: Deprecated.
     gluPerspective( 45,
                     SCREEN_WIDTH / SCREEN_HEIGHT,
                     1.0,     // Near
@@ -35,8 +33,7 @@ void Z::InitOpenGL( SDL_Window *window ) {
     glMatrixMode( GL_MODELVIEW );
     glLoadIdentity();
 
-
-    Z::WaveFrontObject *monkeyWfo = new Z::WaveFrontObject( "../data/monkey.obj" );
+    Z::WaveFrontObject *monkeyWfo = new Z::WaveFrontObject( "data/monkey.obj" );
 
 }
 

@@ -1,7 +1,6 @@
 #include "../inc/WaveFrontObject.h"
 
 #include <string>
-#include <iostream>
 #include <fstream>
 #include <vector>
 
@@ -25,9 +24,11 @@ Z::WaveFrontObject::WaveFrontObject( const char *objFile ) {
             if ( Z::StringStartsWith( splitStr.at( 0 ), "#" ) ) {
                 // Comment. Do Nothing.
             } else if ( splitStr.at( 0 ) == "v" ) {
-                std::cout << "Parsing vertex: " << line << std::endl;
+                //Z_INFO( "Parsing vertex: " << line );
+            } else if ( splitStr.at( 0 ) == "vn" ) {
+            
             } else {
-                std::cout << "Cannot parse line: " << line << std::endl;
+                Z_WARN( "Cannot parse line: " << line ); 
             }
         }
         wfoFile.close();
