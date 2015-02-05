@@ -1,16 +1,16 @@
 all: 
 	mkdir -p debug
-	g++ -g src/*.cpp -lcygwin -lSDL2main -lSDL2 -lglu32 -lopengl32 -mwindows -o debug/loz
+	g++ -g src/*.cpp -framework SDL2 -framework SDL2_ttf -framework OpenGL -o debug/loz
 	mkdir -p   release
 	cp lib/*   release
 	cp debug/* release
 	
-run: all
+run: 
 	debug/loz
 	
-debug: all
+debug: 
 	gdb debug/loz.exe
 
 commit:
-	git commit -a -m "${m}"
+	git commit -a -m "${m} "
 	git push

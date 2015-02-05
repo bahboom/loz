@@ -36,7 +36,7 @@ void Z::InitOpenGL( SDL_Window *window ) {
     glLoadIdentity();
 
 
-    Z::WaveFrontObject *monkeyWfo = new Z::WaveFrontObject( "C:\\dev\\cprojects\\loz\\data\\monkey.obj" );
+    Z::WaveFrontObject *monkeyWfo = new Z::WaveFrontObject( "../data/monkey.obj" );
 
 }
 

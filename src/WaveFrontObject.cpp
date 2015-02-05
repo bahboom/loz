@@ -5,6 +5,7 @@
 #include <fstream>
 #include <vector>
 
+#include "../inc/Logger.h"
 #include "../inc/StringUtil.h"
 
 Z::WaveFrontObject::WaveFrontObject( const char *objFile ) {
@@ -31,7 +32,7 @@ Z::WaveFrontObject::WaveFrontObject( const char *objFile ) {
         }
         wfoFile.close();
     } else {
-        std::cout << "Can't open file: [" << objFile << "]!" << std::endl;
+        Z_ERROR( "Can't open file: [" << objFile << "]!" );
     }
 
 }
