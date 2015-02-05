@@ -12,5 +12,5 @@ debug: all
 	gdb debug/loz.exe
 
 commit:
-	git commit -a -m "Commit: ${comment}"
+	git commit -a -m "${m}"
 	git push
