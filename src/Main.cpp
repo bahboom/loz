@@ -68,9 +68,17 @@ int main(int argc, char **argv) {
     while ( running ) {
         while ( SDL_PollEvent( &event ) ) {
             switch ( event.type ) {
-                case SDL_QUIT:
+
+               case SDL_KEYDOWN: {
+                    const Uint8 *state = SDL_GetKeyboardState( NULL );
+                    if ( state[ SDL_SCANCODE_RETURN ] ) {
+                        running = false;
+                    }
+                } break;
+
+                case SDL_QUIT: {
                     running = false;
-                    break;
+                } break;
             }
         }
         Z::Render(); 

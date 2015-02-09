@@ -11,6 +11,9 @@ namespace Z {
     std::vector<std::string> 
     SplitString( const std::string &str );
 
+    std::vector<std::string> 
+    SplitString( const std::string &str, const std::string &delimiter );
+
     bool 
     StringStartsWith( const std::string &str, const std::string &pattern );
 

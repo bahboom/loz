@@ -28,6 +28,33 @@ Z::SplitString( const std::string &str ) {
     } 
     return results;
 }
+std::vector<std::string> 
+Z::SplitString( const std::string &str, const std::string &delimiter ) {
+    std::vector<std::string> results;
+    
+    int elementFoundAt = -1;
+
+    for ( int i = 0; i < str.length(); i++ ) {
+        if ( elementFoundAt == -1 ) {
+            // Look for starting index (elementFoundAt).
+            if ( str.substr( i, delimiter.length() ) != delimiter ) {
+                elementFoundAt = i;
+            }
+
+        } else { // Found starting index (elementFoundAt). 
+            if ( str.substr( i, delimiter.length() ) == delimiter || i == str.length() - 1 ) {
+                results.push_back( str.substr( elementFoundAt, i - elementFoundAt ) );
+                elementFoundAt = -1; // Reset.
+            }
+        }
+    }
+
+    if ( elementFoundAt != -1 ) {
+        results.push_back( str.substr( elementFoundAt, str.length() ) );
+    } 
+    return results;
+}
+
 
 bool 
 Z::StringStartsWith( const std::string &str, const std::string &pattern ) {
