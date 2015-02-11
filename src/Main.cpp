@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
-#include <GL/glu.h>
+//#include <GL/glu.h>
 
 #include "../inc/WaveFrontObject.h"
 
@@ -25,11 +25,13 @@ void Z::InitOpenGL( SDL_Window *window ) {
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
 
+/*
     // TODO: Deprecated.
     gluPerspective( 45,
                     SCREEN_WIDTH / SCREEN_HEIGHT,
                     1.0,     // Near
                     500.0 ); // Far
+*/
     glMatrixMode( GL_MODELVIEW );
     glLoadIdentity();
 
