@@ -30,10 +30,15 @@ Z::Renderer::RenderWaveFrontObject( Z::WaveFrontObject* wfo ) {
         }
 
         for ( int i = 0; i < numVertices; i++ ) {
+            if ( i < vnVec.size() ) { 
+                Z::Normal normal = normals.at( vnVec.at( i ) - 1 );
+                glNormal3f( normal.x, normal.y, normal.z );
+            }
+
             Z::Vertex vertex = vertices.at( vVec.at( i ) - 1 ); // Wavefront index starts from 1, our index starts from 0.
-            Z::Normal normal = normals.at( vnVec.at( i ) - 1 );
-            glNormal3f( normal.x, normal.y, normal.z );
             glVertex3f( vertex.x, vertex.y, vertex.z );
+       
+
         }
 
         glEnd();

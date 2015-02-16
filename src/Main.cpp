@@ -48,8 +48,6 @@ Z::InitOpenGL( SDL_Window *window ) {
     Z::SetupLighting();
 
     glEnable( GL_CULL_FACE );    
-    //glEnable( GL_POLYGON_SMOOTH ); 
-    //glEnable( GL_FOG );
 
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
@@ -83,7 +81,7 @@ Z::SetupLighting( void ) {
     GLfloat position[] = { -2, 1, 4, 1.0f };
     glLightfv( GL_LIGHT0, GL_POSITION, position );
    
-    glEnable( GL_FOG );
+    //glEnable( GL_FOG );
     glFogf( GL_FOG_DENSITY, 2 );
     glFogf( GL_FOG_MODE, GL_EXP );
     glFogf( GL_FOG_START, -10.0 );
