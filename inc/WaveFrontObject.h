@@ -19,19 +19,37 @@ namespace Z {
     };
 
     struct Face {
-        int v, 
-            vt, vn; // Optional
+        std::vector<int> vVec, 
+                         vtVec, vnVec; // Optional
     };
-
 
     class WaveFrontObject {
         public:
             WaveFrontObject( const char *objFile );
+            
+            std::vector<Z::Vertex> 
+            GetVertices( void ) const; // These methods does not modify this class.
+
+            std::vector<Z::Normal>
+            GetNormals( void ) const;
+            
+            std::vector<Z::Face> 
+            GetFaces( void ) const;
+            
+            std::string 
+            ToString( void ) const;
         private:
-            Z::Vertex ParseVertex( const std::vector<std::string>& strs );
-            Z::Normal ParseNormal();
-            Z::TextureCoordinate ParseTextureCoordinate();
-            Z::Face ParseFace();
+            static Z::Vertex 
+            ParseVertex( const std::vector<std::string>& lineElements );
+            
+            static Z::Normal 
+            ParseNormal( const std::vector<std::string>& lineElements );
+            
+            static Z::TextureCoordinate 
+            ParseTextureCoordinate( const std::vector<std::string>& lineElements );
+            
+            static Z::Face 
+            ParseFace( const std::vector<std::string>& lineElements );
 
             std::vector<Z::Vertex> vertices;
             std::vector<Z::Normal> normals;

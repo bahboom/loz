@@ -1,10 +1,14 @@
 #ifndef Z_RENDERER_H
 #define Z_RENDERER_H
 
+#include "../inc/WaveFrontObject.h"
+
 namespace Z {
     class Renderer {
         public:
-            void Render( void );
+            void 
+            RenderWaveFrontObject( Z::WaveFrontObject* wfo );
+ 
     };
 }
 

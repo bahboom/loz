@@ -9,22 +9,28 @@ namespace Z {
      * Split string by whitespace.
      */
     std::vector<std::string> 
-    SplitString( const std::string &str );
+    Split( const std::string& str );
 
     std::vector<std::string> 
-    SplitString( const std::string &str, const std::string &delimiter );
+    Split( const std::string& str, const std::string &delimiter );
 
     bool 
-    StringStartsWith( const std::string &str, const std::string &pattern );
+    StartsWith( const std::string& str, const std::string &pattern );
+
+    bool
+    IsInteger( const std::string& str );
+
+    bool
+    IsDecimal( const std::string& str );
 
     std::string
-    TrimStringHead( const std::string &str ); 
+    TrimHead( const std::string &str ); 
 
     std::string
-    TrimStringTail( const std::string &str );
+    TrimTail( const std::string &str );
     
     std::string 
-    TrimString ( const std::string &str );
+    Trim( const std::string &str );
 }
 
 #endif
